@@ -253,7 +253,7 @@ END;
 ```
 ## OUTPUT
 
-![Uploading image.png…]()
+<img width="410" height="227" alt="image" src="https://github.com/user-attachments/assets/3879a7f9-7eda-437f-9788-4de03e0e04f4" />
 
 
 ## RESULT
