@@ -29,11 +29,11 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 | Entity | Attributes (PK, FK) | Notes |
 |--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+| MEMBER     | MemberID (PK), Name, Gender, Phone               | Stores member details       |
+| PROGRAM    | ProgramID (PK), ProgramName, ProgramType         | Stores fitness programs     |
+| TRAINERS   | TrainerID (PK), TrainerName, PhoneNumber, Gender | Stores trainer details      |
+| MEMBERSHIP | MembershipID (PK), MembershipType, Status, Price | Stores membership details   |
+| PAYMENTS   | PaymentID (PK), PaymentType, Price               | Stores payment details      |
 
 ### Relationships and Constraints
 
