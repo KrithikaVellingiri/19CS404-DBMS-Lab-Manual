@@ -22,8 +22,8 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 - Payments tracked for memberships and sessions.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_fitness.png)
+<img width="753" height="417" alt="image" src="https://github.com/user-attachments/assets/8e9bae53-2c7d-42a4-8baa-270d740be2ac" />
+
 
 ### Entities and Attributes
 
@@ -39,14 +39,17 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 | Relationship | Cardinality | Participation | Notes |
 |--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+| MEMBER - joins — PROGRAM	        |M:N	|Partial	Members can join multiple programs     |
+| PROGRAM - has — TRAINERS	        |M:N	|Partial	Programs can have multiple trainers    |
+| MEMBER — has — MEMBERSHIP        	|1:1	|Total	Each member has one membership           |
+| MEMBER — books — SESSIONS	        |1:N	|Partial	Members can book multiple sessions     |
+| TRAINERS — provides — SESSIONS	  |1:N	|Partial	Trainers can provide multiple sessions |
+| MEMBERSHIP — Paid for — PAYMENTS	|1:N	|Total	Membership payments are recorded         |
 
 ### Assumptions
-- 
-- 
-- 
+- Each member can join one or more programs.
+- Each program can have multiple trainers.
+- Each session is associated with one member and one trainer.
 
 ---
 
@@ -64,18 +67,20 @@ The Central Library wants to manage book lending and cultural events.
 - Overdue fines apply for late returns.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_library.png)
+
 
 ### Entities and Attributes
 
 | Entity | Attributes (PK, FK) | Notes |
 |--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+| MEMBER           | MemberID (PK), Name, Gender, Phone                    | Stores member details               |
+| BOOKS            | BookID (PK), Title, Author, Category                  | Stores book details                 |
+| EVENTS           | EventID (PK), EventName, Price                        | Stores library events               |
+| SPEAKERS/AUTHORS | Name, Role, Contact                                   | Stores speaker/author details       |
+| ROOMS IN LIBRARY | PaymentID (PK), Price, PaymentType                    | Stores room booking payment details |
+| STUDY PURPOSES   | SessionID (PK), SessionType, SessionDate, SessionTime | Stores study sessions               |
+| FINES            | FineID (PK), Amount, PaidStatus                       | Stores overdue fine details         |
+
 
 ### Relationships and Constraints
 
