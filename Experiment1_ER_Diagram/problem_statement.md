@@ -67,6 +67,7 @@ The Central Library wants to manage book lending and cultural events.
 - Overdue fines apply for late returns.
 
 ### ER Diagram:
+<img width="753" height="646" alt="image" src="https://github.com/user-attachments/assets/e105b710-7437-458c-9f9a-4dc845d705ad" />
 
 
 ### Entities and Attributes
@@ -86,14 +87,19 @@ The Central Library wants to manage book lending and cultural events.
 
 | Relationship | Cardinality | Participation | Notes |
 |--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+| MEMBER — borrows — BOOKS             | M:N         | Partial       | Members can borrow multiple books              |
+| MEMBER — register for — EVENTS       | M:N         | Partial       | Members can register for multiple events       |
+| EVENTS — has — SPEAKERS/AUTHORS      | 1:N         | Total         | Each event has one or more speakers            |
+| EVENTS — booked in — ROOMS           | N:1         | Total         | Events are held in library rooms               |
+| ROOMS — booked for — STUDY PURPOSES  | 1:N         | Partial       | A room can be used for multiple study sessions |
+| MEMBER — on late return pays — FINES | 1:N         | Partial       | A member may have multiple overdue fines       |
+
+
 
 ### Assumptions
-- 
-- 
-- 
+- A member can borrow multiple books, but each book is borrowed by one member at a time.
+- A member can register for multiple events
+- Each event has at least one speaker or author.
 
 ---
 
@@ -111,31 +117,38 @@ A popular restaurant wants to manage reservations, orders, and billing.
 - Waiters assigned to serve reservations.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_restaurant.png)
+<img width="752" height="546" alt="image" src="https://github.com/user-attachments/assets/aa05d68b-f4a4-46c7-b67c-d04e5d3e1b09" />
+
 
 ### Entities and Attributes
 
 | Entity | Attributes (PK, FK) | Notes |
 |--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+| CUSTOMER    | CustomerID (PK), Name, Gender, Phone                          | Stores customer details    |
+| RESERVATION | ReservationID (PK), Date, Time, NoOfGuests, ReservationType   | Stores reservation details |
+| WAITER      | WaiterID (PK), Name, Phone, Email                             | Stores waiter details      |
+| ORDERS      | OrderID (PK), OrderTime, Status                               | Stores order details       |
+| ORDER_ITEM  | Quantity, UnitPrice                                           | Stores items in an order   |
+| DISH        | DishID (PK), DishName, Price                                  | Stores dish details        |
+| CATEGORY    | CategoryID (PK), CategoryName                                 | Stores dish categories     |
+| BILL        | BillID (PK), BillDate, FoodAmount, ServiceAmount, TotalAmount | Stores billing details     |
 
 ### Relationships and Constraints
 
 | Relationship | Cardinality | Participation | Notes |
 |--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+| CUSTOMER — makes — RESERVATION     | 1:N         | Partial, Total | A customer can make multiple reservations |
+| RESERVATION — assigned to — WAITER | N:1         | Total, Partial | A waiter can serve multiple reservations  |
+| RESERVATION — booked in — ORDERS   | 1:N         | Partial, Total | A reservation can have multiple orders    |
+| ORDERS — contains — ORDER_ITEM     | 1:N         | Total, Total   | Each order contains multiple items        |
+| ORDER_ITEM — booked for — DISH     | N:1         | Total, Partial | Each order item refers to one dish        |
+| DISH — belongs to — CATEGORY       | N:1         | Total, Total   | Each dish belongs to one category         |
+| RESERVATION — generates — BILL     | 1:1         | Total, Total   | Each reservation generates one bill       |
 
 ### Assumptions
-- 
-- 
-- 
+- A customer can make multiple reservations, but each reservation belongs to one customer.
+- Each order can contain multiple dishes with their quantities.
+- Each dish belongs to one category.
 
 ---
 
