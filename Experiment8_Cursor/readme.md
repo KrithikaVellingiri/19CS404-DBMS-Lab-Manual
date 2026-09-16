@@ -79,7 +79,7 @@ END;
 **Output:**  
 The program should display the employee details or an error message.
 
-###CODE
+### CODE
 
 ```
 CREATE TABLE employees (
@@ -134,7 +134,7 @@ END;
 /
 ```
 
-###OUTPUT
+### OUTPUT
 <img width="455" height="152" alt="image" src="https://github.com/user-attachments/assets/e4452810-6357-4bff-8110-e997120adb8a" />
 
 ---
@@ -156,7 +156,7 @@ END;
 **Output:**  
 The program should display the employee details within the specified salary range or an error message if no data is found.
 
-###CODE
+### CODE
 
 ```
 ALTER TABLE employees ADD salary NUMBER(10, 2);
@@ -208,7 +208,7 @@ END;
 /
 ```
 
-###OUTPUT
+### OUTPUT
 
 <img width="502" height="121" alt="image" src="https://github.com/user-attachments/assets/595e2938-c308-4504-9b39-eabc8cbd373e" />
 
@@ -231,7 +231,7 @@ END;
 **Output:**  
 The program should display employee names with their department numbers or the appropriate error message if no data is found.
 
-###CODE
+### CODE
 
 ```
 ALTER TABLE employees ADD dept_no NUMBER(5);
@@ -266,7 +266,7 @@ END;
 /
 ```
 
-###OUTPUT
+### OUTPUT
 
 <img width="360" height="103" alt="image" src="https://github.com/user-attachments/assets/34f15556-36cf-48ea-88c2-695cd1f9ac57" />
 
@@ -289,7 +289,7 @@ END;
 **Output:**  
 The program should display employee records or the appropriate error message if no data is found.
 
-###CODE
+### CODE
 
 ```
 ALTER TABLE employees ADD (
@@ -344,7 +344,7 @@ END;
 /
 ```
 
-###OUTPUT
+### OUTPUT
 <img width="538" height="107" alt="image" src="https://github.com/user-attachments/assets/58259bde-c044-45e5-8fd3-c23d1b71402d" />
 
 ---
@@ -366,7 +366,7 @@ END;
 **Output:**  
 The program should update employee salaries and display a message, or it should display an error message if no data is found.
 
-###CODE
+### CODE
 
 ```
 ALTER TABLE employees ADD (
@@ -416,7 +416,7 @@ END;
 /
 ```
 
-###OUTPUT
+### OUTPUT
 <img width="452" height="77" alt="image" src="https://github.com/user-attachments/assets/b70e9601-1624-49a3-8d61-331948fe28b3" />
 
 ---
